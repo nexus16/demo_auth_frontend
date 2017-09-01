@@ -1,0 +1,40 @@
+<p>
+  list books!
+</p>
+	
+<div>
+	<form #myForm='ngForm' (ngSubmit)="createBook(myForm.value)">
+		<input type="text" name="title" ngModel >
+		<input type="text" name="author" ngModel >
+		<button type="submit">sdsdsa</button>
+	</form>	
+</div>
+
+update
+<div>
+	<form #myEditForm='ngForm' (ngSubmit)="editBook(myEditForm.value)">
+		<input type="text" name="title" ngModel >
+		<input type="text" name="author" ngModel >
+		<button type="submit">sdsdsa</button>
+	</form>	
+</div>
+
+
+<div > 
+<table style="border: 1px solid">
+	<thead>
+		<tr>
+			<th style="border: 1px solid">id</th>
+			<th style="border: 1px solid">title</th>
+			<th style="border: 1px solid">author</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let book of books">
+			<td style="border: 1px solid">{{book.id}}</td>
+			<td style="border: 1px solid">{{book.title}}</td>
+			<td style="border: 1px solid">{{book.author}}</td>
+		</tr>
+	</tbody>
+</table>
+</div>
